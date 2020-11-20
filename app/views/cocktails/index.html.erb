@@ -1,32 +1,28 @@
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
     <div class="container">
-      <h1>Rabo de Galo Cocktail bare</strong>!</h1>
+      <h1>Rabo de Galo Cocktail bar</strong>!</h1>
       <p>The best Rabo de Galo so far</p>
       <a class="btn btn-flat" href="#">Apply now</a>
     </div>
   </div>
   <br>
-    <h1> Cocktails </h1>
+    <h1 class="text-center"> Cocktails </h1>
+<br>
 
-<div class="card-columns">
-
- 
+<div class="container">
+  <div class="row">
     <% @cocktails.each do |cocktail| %>
-  <div class="card">
-  
-  <div class="card-img-top img-fluid, url(https://images.unsplash.com/photo-1588269965522-9bd83f3f3f13?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)">
-
-  <div class="card-body">
-     
-    <h4 class="card-title"> 
-     
-     <%= link_to cocktail.name, cocktail_path(cocktail.id) %> </h4>
-    </div> 
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/500x400/?cocktail');">
+          <div class="card-description">
+            <h2><%= cocktail.name %></h2>
+          </div>
+          <%= link_to "", cocktail_path(cocktail), class: 'card-link' %>
+        </div>
+      </div>
+    <% end %>
   </div>
- </div>
- <% end %>
-  
-
+  <%= link_to 'New Cocktail', new_cocktail_path, class: 'btn btn-dark float-right' %>
+<br>
+<br>
 </div>
-
-<%= link_to 'New Cocktail', new_cocktail_path, class: 'btn btn-primary' %>

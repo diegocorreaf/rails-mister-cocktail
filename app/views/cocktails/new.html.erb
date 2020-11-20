@@ -1,10 +1,14 @@
-<%= simple_form_for(@cocktail) do |f| %>
-  
-  <div class="form-inputs">
-    <%= f.input :name %>
-  </div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <br>
+      <h1>Create a new cocktail</h1>
 
-  <div class="form-actions">
-    <%= f.button :submit, class: 'btn btn-primary' %>
+      <%= simple_form_for(@cocktail) do |f| %>
+        <%= f.input :name %>
+        <%= f.button :submit, class: 'btn btn-dark' %>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>
+
